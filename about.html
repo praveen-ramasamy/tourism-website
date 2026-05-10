@@ -167,8 +167,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg"
-                        alt="Travel Team" class="rounded-3xl shadow-soft" />
+                    <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg" alt="Travel Team"
+                        class="rounded-3xl shadow-soft" />
                 </div>
 
                 <div>
@@ -384,76 +384,95 @@
             </div>
         </div>
     </footer>
-<script>
-  // Mobile Menu Toggle
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
 
-  if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+      <!-- Scroll Top -->
+  <button id="scrollTop" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-white shadow-xl hidden z-40 hover:scale-110 transition">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+    <script>
 
-  // Navbar Scroll Effect
-  const navbarBox = document.getElementById('navbarBox');
-  const logoText = document.getElementById('logoText');
-  const logoSubText = document.getElementById('logoSubText');
-  const navLinks = document.querySelectorAll('.nav-link');
+        // Scroll Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.remove('hidden');
+            } else {
+                scrollTopBtn.classList.add('hidden');
+            }
+        });
 
-  function updateNavbar() {
-    if (window.scrollY > 50) {
-      // White navbar
-      navbarBox.classList.remove('glass');
-      navbarBox.classList.add('bg-white', 'shadow-2xl');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-      // Logo text
-      logoText.classList.remove('text-white');
-      logoText.classList.add('text-slate-900');
-
-      logoSubText.classList.remove('text-slate-200');
-      logoSubText.classList.add('text-slate-500');
-
-      // Menu links
-      navLinks.forEach(link => {
-        if (!link.classList.contains('text-accent')) {
-          link.classList.remove('text-white');
-          link.classList.add('text-slate-800');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         }
-      });
 
-      // Mobile menu button
-      menuBtn.classList.remove('text-white');
-      menuBtn.classList.add('text-slate-800');
-    } else {
-      // Transparent glass navbar
-      navbarBox.classList.add('glass');
-      navbarBox.classList.remove('bg-white', 'shadow-2xl');
+        // Navbar Scroll Effect
+        const navbarBox = document.getElementById('navbarBox');
+        const logoText = document.getElementById('logoText');
+        const logoSubText = document.getElementById('logoSubText');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-      // Logo text
-      logoText.classList.remove('text-slate-900');
-      logoText.classList.add('text-white');
+        function updateNavbar() {
+            if (window.scrollY > 50) {
+                // White navbar
+                navbarBox.classList.remove('glass');
+                navbarBox.classList.add('bg-white', 'shadow-2xl');
 
-      logoSubText.classList.remove('text-slate-500');
-      logoSubText.classList.add('text-slate-200');
+                // Logo text
+                logoText.classList.remove('text-white');
+                logoText.classList.add('text-slate-900');
 
-      // Menu links
-      navLinks.forEach(link => {
-        if (!link.classList.contains('text-accent')) {
-          link.classList.remove('text-slate-800');
-          link.classList.add('text-white');
+                logoSubText.classList.remove('text-slate-200');
+                logoSubText.classList.add('text-slate-500');
+
+                // Menu links
+                navLinks.forEach(link => {
+                    if (!link.classList.contains('text-accent')) {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-slate-800');
+                    }
+                });
+
+                // Mobile menu button
+                menuBtn.classList.remove('text-white');
+                menuBtn.classList.add('text-slate-800');
+            } else {
+                // Transparent glass navbar
+                navbarBox.classList.add('glass');
+                navbarBox.classList.remove('bg-white', 'shadow-2xl');
+
+                // Logo text
+                logoText.classList.remove('text-slate-900');
+                logoText.classList.add('text-white');
+
+                logoSubText.classList.remove('text-slate-500');
+                logoSubText.classList.add('text-slate-200');
+
+                // Menu links
+                navLinks.forEach(link => {
+                    if (!link.classList.contains('text-accent')) {
+                        link.classList.remove('text-slate-800');
+                        link.classList.add('text-white');
+                    }
+                });
+
+                // Mobile menu button
+                menuBtn.classList.remove('text-slate-800');
+                menuBtn.classList.add('text-white');
+            }
         }
-      });
 
-      // Mobile menu button
-      menuBtn.classList.remove('text-slate-800');
-      menuBtn.classList.add('text-white');
-    }
-  }
-
-  window.addEventListener('scroll', updateNavbar);
-  window.addEventListener('load', updateNavbar);
-</script>
+        window.addEventListener('scroll', updateNavbar);
+        window.addEventListener('load', updateNavbar);
+    </script>
 </body>
 
 </html>

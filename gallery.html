@@ -304,8 +304,26 @@
   </button>
   <img id="lightboxImg" src="" alt="Gallery Preview" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
 </div>
-
+  <!-- Scroll Top -->
+  <button id="scrollTop" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-white shadow-xl hidden z-40 hover:scale-110 transition">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 <script>
+
+      // Scroll Top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTopBtn.classList.remove('hidden');
+      } else {
+        scrollTopBtn.classList.add('hidden');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
   // Mobile Menu
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');

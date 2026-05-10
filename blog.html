@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | Your Tourism Company</title>
-  <meta name="description" content="Travel tips, destination guides, and inspiring stories from Your Tourism Company." />
+  <meta name="description"
+    content="Travel tips, destination guides, and inspiring stories from Your Tourism Company." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -41,19 +45,24 @@
   </script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
 
     .glass {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .hero-bg {
       background:
-        linear-gradient(to right, rgba(2,6,23,0.85), rgba(14,165,233,0.35)),
+        linear-gradient(to right, rgba(2, 6, 23, 0.85), rgba(14, 165, 233, 0.35)),
         url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     }
 
@@ -71,204 +80,222 @@
     }
   </style>
 </head>
+
 <body class="bg-white text-slate-700">
 
-<!-- Header -->
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div id="navbarBox" class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
-          <i class="fa-solid fa-plane-departure"></i>
-        </div>
-        <div>
-          <div id="logoText" class="font-heading font-bold text-white">Your Tourism Company</div>
-          <div id="logoSubText" class="text-xs text-slate-200">Explore Beyond Limits</div>
-        </div>
-      </a>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div id="navbarBox"
+        class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fa-solid fa-plane-departure"></i>
+          </div>
+          <div>
+            <div id="logoText" class="font-heading font-bold text-white">Your Tourism Company</div>
+            <div id="logoSubText" class="text-xs text-slate-200">Explore Beyond Limits</div>
+          </div>
+        </a>
 
-      <div class="hidden lg:flex items-center gap-8 font-medium">
-        <a href="index.html" class="nav-link text-white hover:text-accent">Home</a>
-        <a href="about.html" class="nav-link text-white hover:text-accent">About</a>
-        <a href="packages.html" class="nav-link text-white hover:text-accent">Packages</a>
-        <a href="destinations.html" class="nav-link text-white hover:text-accent">Destinations</a>
-        <a href="gallery.html" class="nav-link text-white hover:text-accent">Gallery</a>
-        <a href="blog.html" class="nav-link text-accent">Blog</a>
-        <a href="contact.html" class="nav-link text-white hover:text-accent">Contact</a>
+        <div class="hidden lg:flex items-center gap-8 font-medium">
+          <a href="index.html" class="nav-link text-white hover:text-accent">Home</a>
+          <a href="about.html" class="nav-link text-white hover:text-accent">About</a>
+          <a href="packages.html" class="nav-link text-white hover:text-accent">Packages</a>
+          <a href="destinations.html" class="nav-link text-white hover:text-accent">Destinations</a>
+          <a href="gallery.html" class="nav-link text-white hover:text-accent">Gallery</a>
+          <a href="blog.html" class="nav-link text-accent">Blog</a>
+          <a href="contact.html" class="nav-link text-white hover:text-accent">Contact</a>
+        </div>
+
+        <a href="contact.html"
+          class="hidden lg:inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+          Book Now
+        </a>
+
+        <button id="menuBtn" class="lg:hidden text-white text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
 
-      <a href="contact.html" class="hidden lg:inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
-        Book Now
-      </a>
+      <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
+        <div class="flex flex-col space-y-4 font-medium text-slate-800">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="packages.html">Packages</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html" class="text-primary">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-      <button id="menuBtn" class="lg:hidden text-white text-2xl">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+  <!-- Hero -->
+  <section class="hero-bg min-h-[60vh] flex items-center pt-32 pb-20 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
+        <i class="fa-solid fa-pen-nib"></i>
+        Travel Insights & Stories
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+        Explore Our Travel Blog
+      </h1>
+      <p class="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed">
+        Destination guides, travel tips, and inspiring stories to help you plan unforgettable journeys.
+      </p>
     </div>
+  </section>
 
-    <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
-      <div class="flex flex-col space-y-4 font-medium text-slate-800">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="packages.html">Packages</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="blog.html" class="text-primary">Blog</a>
-        <a href="contact.html">Contact</a>
+  <!-- Blog Grid -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+        <!-- Blog Card -->
+        <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+              alt="Beach Destinations" class="w-full h-64 object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
+              <span><i class="fa-regular fa-calendar mr-1"></i> May 10, 2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-3">Top 10 Tropical Beach Destinations</h3>
+            <p class="text-slate-600 mb-5">Discover the world's most breathtaking beach escapes for your next relaxing
+              vacation.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80"
+              alt="Swiss Alps" class="w-full h-64 object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
+              <span><i class="fa-regular fa-calendar mr-1"></i> May 05, 2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-3">A Complete Guide to Switzerland</h3>
+            <p class="text-slate-600 mb-5">Everything you need to know before planning your scenic alpine adventure.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
+              alt="Dubai" class="w-full h-64 object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
+              <span><i class="fa-regular fa-calendar mr-1"></i> Apr 28, 2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-3">Best Things to Do in Dubai</h3>
+            <p class="text-slate-600 mb-5">From desert safaris to luxury shopping, explore Dubai like never before.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+              alt="Thailand" class="w-full h-64 object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
+              <span><i class="fa-regular fa-calendar mr-1"></i> Apr 20, 2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-3">Thailand Travel Tips for First-Timers</h3>
+            <p class="text-slate-600 mb-5">Practical advice for exploring Thailand with confidence and ease.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80"
+              alt="Maldives" class="w-full h-64 object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
+              <span><i class="fa-regular fa-calendar mr-1"></i> Apr 12, 2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-3">Why Maldives is Perfect for Honeymoons</h3>
+            <p class="text-slate-600 mb-5">Experience romance, luxury, and crystal-clear waters in paradise.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80"
+              alt="Road Trip" class="w-full h-64 object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
+              <span><i class="fa-regular fa-calendar mr-1"></i> Apr 05, 2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-3">Ultimate Road Trip Packing Checklist</h3>
+            <p class="text-slate-600 mb-5">Never forget the essentials for your next adventurous road trip.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center mt-14 gap-3">
+        <a href="#"
+          class="w-11 h-11 rounded-xl bg-primary text-white flex items-center justify-center font-semibold">1</a>
+        <a href="#"
+          class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center font-semibold">2</a>
+        <a href="#"
+          class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center font-semibold">3</a>
+        <a href="#" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center"><i
+            class="fa-solid fa-angle-right"></i></a>
       </div>
     </div>
-  </nav>
-</header>
+  </section>
 
-<!-- Hero -->
-<section class="hero-bg min-h-[60vh] flex items-center pt-32 pb-20 text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
-      <i class="fa-solid fa-pen-nib"></i>
-      Travel Insights & Stories
-    </span>
-    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
-      Explore Our Travel Blog
-    </h1>
-    <p class="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed">
-      Destination guides, travel tips, and inspiring stories to help you plan unforgettable journeys.
-    </p>
-  </div>
-</section>
-
-<!-- Blog Grid -->
-<section class="py-24 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-      <!-- Blog Card -->
-      <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Beach Destinations" class="w-full h-64 object-cover">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-            <span><i class="fa-regular fa-calendar mr-1"></i> May 10, 2026</span>
-            <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-dark mb-3">Top 10 Tropical Beach Destinations</h3>
-          <p class="text-slate-600 mb-5">Discover the world's most breathtaking beach escapes for your next relaxing vacation.</p>
-          <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Read More <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80" alt="Swiss Alps" class="w-full h-64 object-cover">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-            <span><i class="fa-regular fa-calendar mr-1"></i> May 05, 2026</span>
-            <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-dark mb-3">A Complete Guide to Switzerland</h3>
-          <p class="text-slate-600 mb-5">Everything you need to know before planning your scenic alpine adventure.</p>
-          <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Read More <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" alt="Dubai" class="w-full h-64 object-cover">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-            <span><i class="fa-regular fa-calendar mr-1"></i> Apr 28, 2026</span>
-            <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-dark mb-3">Best Things to Do in Dubai</h3>
-          <p class="text-slate-600 mb-5">From desert safaris to luxury shopping, explore Dubai like never before.</p>
-          <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Read More <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Thailand" class="w-full h-64 object-cover">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-            <span><i class="fa-regular fa-calendar mr-1"></i> Apr 20, 2026</span>
-            <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-dark mb-3">Thailand Travel Tips for First-Timers</h3>
-          <p class="text-slate-600 mb-5">Practical advice for exploring Thailand with confidence and ease.</p>
-          <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Read More <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80" alt="Maldives" class="w-full h-64 object-cover">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-            <span><i class="fa-regular fa-calendar mr-1"></i> Apr 12, 2026</span>
-            <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-dark mb-3">Why Maldives is Perfect for Honeymoons</h3>
-          <p class="text-slate-600 mb-5">Experience romance, luxury, and crystal-clear waters in paradise.</p>
-          <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Read More <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80" alt="Road Trip" class="w-full h-64 object-cover">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-4 text-sm text-slate-500 mb-4">
-            <span><i class="fa-regular fa-calendar mr-1"></i> Apr 05, 2026</span>
-            <span><i class="fa-regular fa-user mr-1"></i> Admin</span>
-          </div>
-          <h3 class="font-heading text-2xl font-bold text-dark mb-3">Ultimate Road Trip Packing Checklist</h3>
-          <p class="text-slate-600 mb-5">Never forget the essentials for your next adventurous road trip.</p>
-          <a href="#" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Read More <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </article>
-
+  <!-- Newsletter -->
+  <section class="py-24 bg-gradient-to-r from-primary to-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+      <p class="text-lg text-white/90 mb-8">Get travel inspiration, exclusive deals, and expert tips delivered to your
+        inbox.</p>
+      <form class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4">
+        <input type="email" placeholder="Enter your email"
+          class="flex-1 px-5 py-4 rounded-xl text-slate-800 outline-none">
+        <button class="px-8 py-4 rounded-xl bg-accent text-white font-semibold hover:scale-105 transition">
+          Subscribe
+        </button>
+      </form>
     </div>
-
-    <!-- Pagination -->
-    <div class="flex justify-center mt-14 gap-3">
-      <a href="#" class="w-11 h-11 rounded-xl bg-primary text-white flex items-center justify-center font-semibold">1</a>
-      <a href="#" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center font-semibold">2</a>
-      <a href="#" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center font-semibold">3</a>
-      <a href="#" class="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center"><i class="fa-solid fa-angle-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter -->
-<section class="py-24 bg-gradient-to-r from-primary to-secondary text-white">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="font-heading text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-    <p class="text-lg text-white/90 mb-8">Get travel inspiration, exclusive deals, and expert tips delivered to your inbox.</p>
-    <form class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-4">
-      <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-4 rounded-xl text-slate-800 outline-none">
-      <button class="px-8 py-4 rounded-xl bg-accent text-white font-semibold hover:scale-105 transition">
-        Subscribe
-      </button>
-    </form>
-  </div>
-</section>
+  </section>
 
 
   <!-- Footer -->
@@ -302,9 +329,12 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Follow Us</h4>
           <div class="flex gap-3">
-            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i
+                class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -314,50 +344,71 @@
       </div>
     </div>
   </footer>
+  <!-- Scroll Top -->
+  <button id="scrollTop"
+    class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-primary text-white shadow-xl hidden z-40 hover:scale-110 transition">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <script>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-  const navbarBox = document.getElementById('navbarBox');
-  const logoText = document.getElementById('logoText');
-  const logoSubText = document.getElementById('logoSubText');
-  const navLinks = document.querySelectorAll('.nav-link');
+    // Scroll Top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTopBtn.classList.remove('hidden');
+      } else {
+        scrollTopBtn.classList.add('hidden');
+      }
+    });
 
-  function updateNavbar() {
-    if (window.scrollY > 50) {
-      navbarBox.classList.remove('glass');
-      navbarBox.classList.add('bg-white', 'shadow-2xl');
-      logoText.classList.replace('text-white', 'text-slate-900');
-      logoSubText.classList.replace('text-slate-200', 'text-slate-500');
-      navLinks.forEach(link => {
-        if (!link.classList.contains('text-accent')) {
-          link.classList.remove('text-white');
-          link.classList.add('text-slate-800');
-        }
-      });
-      menuBtn.classList.remove('text-white');
-      menuBtn.classList.add('text-slate-800');
-    } else {
-      navbarBox.classList.add('glass');
-      navbarBox.classList.remove('bg-white', 'shadow-2xl');
-      logoText.classList.replace('text-slate-900', 'text-white');
-      logoSubText.classList.replace('text-slate-500', 'text-slate-200');
-      navLinks.forEach(link => {
-        if (!link.classList.contains('text-accent')) {
-          link.classList.remove('text-slate-800');
-          link.classList.add('text-white');
-        }
-      });
-      menuBtn.classList.remove('text-slate-800');
-      menuBtn.classList.add('text-white');
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    const navbarBox = document.getElementById('navbarBox');
+    const logoText = document.getElementById('logoText');
+    const logoSubText = document.getElementById('logoSubText');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateNavbar() {
+      if (window.scrollY > 50) {
+        navbarBox.classList.remove('glass');
+        navbarBox.classList.add('bg-white', 'shadow-2xl');
+        logoText.classList.replace('text-white', 'text-slate-900');
+        logoSubText.classList.replace('text-slate-200', 'text-slate-500');
+        navLinks.forEach(link => {
+          if (!link.classList.contains('text-accent')) {
+            link.classList.remove('text-white');
+            link.classList.add('text-slate-800');
+          }
+        });
+        menuBtn.classList.remove('text-white');
+        menuBtn.classList.add('text-slate-800');
+      } else {
+        navbarBox.classList.add('glass');
+        navbarBox.classList.remove('bg-white', 'shadow-2xl');
+        logoText.classList.replace('text-slate-900', 'text-white');
+        logoSubText.classList.replace('text-slate-500', 'text-slate-200');
+        navLinks.forEach(link => {
+          if (!link.classList.contains('text-accent')) {
+            link.classList.remove('text-slate-800');
+            link.classList.add('text-white');
+          }
+        });
+        menuBtn.classList.remove('text-slate-800');
+        menuBtn.classList.add('text-white');
+      }
     }
-  }
 
-  window.addEventListener('scroll', updateNavbar);
-  window.addEventListener('load', updateNavbar);
-</script>
+    window.addEventListener('scroll', updateNavbar);
+    window.addEventListener('load', updateNavbar);
+  </script>
 
 </body>
+
 </html>
