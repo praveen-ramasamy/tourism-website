@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Packages | Your Tourism Company</title>
+  <meta
+    name="description"
+    content="Explore premium domestic and international tour packages with Your Tourism Company."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#14B8A6',
+            accent: '#F59E0B',
+            dark: '#0F172A'
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 10px 40px rgba(15, 23, 42, 0.08)',
+            card: '0 20px 60px rgba(15, 23, 42, 0.08)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #334155;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(to right, rgba(2, 6, 23, 0.85), rgba(14, 165, 233, 0.35)),
+        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 14px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0EA5E9, #14B8A6);
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div id="navbarBox" class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+            <i class="fa-solid fa-plane-departure"></i>
+          </div>
+          <div>
+            <div id="logoText" class="font-heading font-bold text-white">Your Tourism Company</div>
+            <div id="logoSubText" class="text-xs text-slate-200">Explore Beyond Limits</div>
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8 font-medium">
+          <a href="index.html" class="nav-link text-white hover:text-accent transition">Home</a>
+          <a href="about.html" class="nav-link text-white hover:text-accent transition">About</a>
+          <a href="packages.html" class="nav-link text-accent">Packages</a>
+          <a href="destinations.html" class="nav-link text-white hover:text-accent transition">Destinations</a>
+          <a href="gallery.html" class="nav-link text-white hover:text-accent transition">Gallery</a>
+          <a href="blog.html" class="nav-link text-white hover:text-accent transition">Blog</a>
+          <a href="contact.html" class="nav-link text-white hover:text-accent transition">Contact</a>
+        </div>
+
+        <a href="contact.html" class="hidden lg:inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+          Book Now
+        </a>
+
+        <button id="menuBtn" class="lg:hidden text-white text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
+        <div class="flex flex-col space-y-4 font-medium text-slate-800">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="packages.html" class="text-primary">Packages</a>
+          <a href="destinations.html">Destinations</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-[60vh] flex items-center pt-32 pb-20 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
+        <i class="fa-solid fa-suitcase-rolling"></i>
+        Premium Travel Packages
+      </span>
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+        Explore Our Tour Packages
+      </h1>
+      <p class="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed">
+        Handpicked travel experiences designed for adventure, relaxation, romance, and unforgettable memories.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="py-10 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-4">
+        <select class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+          <option>All Destinations</option>
+          <option>Bali</option>
+          <option>Switzerland</option>
+          <option>Dubai</option>
+          <option>Maldives</option>
+        </select>
+
+        <select class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+          <option>Price Range</option>
+          <option>Under ₹50,000</option>
+          <option>₹50,000 - ₹1,00,000</option>
+          <option>Above ₹1,00,000</option>
+        </select>
+
+        <select class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+          <option>Duration</option>
+          <option>3-5 Days</option>
+          <option>6-8 Days</option>
+          <option>9+ Days</option>
+        </select>
+
+        <select class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+          <option>Sort By</option>
+          <option>Popularity</option>
+          <option>Price Low to High</option>
+          <option>Price High to Low</option>
+          <option>Top Rated</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Grid -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+        <!-- Package Card -->
+        <div class="package-card bg-white rounded-3xl overflow-hidden shadow-card transition duration-500">
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover" alt="Bali" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-white text-xs font-semibold">Popular</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-3">
+              <span><i class="fa-regular fa-clock mr-1"></i> 6 Days</span>
+              <span><i class="fa-solid fa-star text-yellow-400 mr-1"></i> 4.9</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-2">Luxury Bali Escape</h3>
+            <p class="text-slate-600 mb-4">Beachfront resorts, island tours, and unforgettable sunsets.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">5-Star Hotels</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">Airport Transfer</span>
+              <span class="px-3 py-1 bg-slate-100 rounded-full text-xs">Breakfast</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-500">Starting From</p>
+                <p class="text-2xl font-bold text-primary">₹49,999</p>
+              </div>
+              <a href="package-details.html" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="package-card bg-white rounded-3xl overflow-hidden shadow-card transition duration-500">
+          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover" alt="Switzerland" />
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-3">
+              <span><i class="fa-regular fa-clock mr-1"></i> 8 Days</span>
+              <span><i class="fa-solid fa-star text-yellow-400 mr-1"></i> 4.8</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-2">Swiss Adventure</h3>
+            <p class="text-slate-600 mb-4">Alpine scenery, scenic rail journeys, and luxury stays.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-500">Starting From</p>
+                <p class="text-2xl font-bold text-primary">₹1,29,999</p>
+              </div>
+              <a href="package-details.html" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="package-card bg-white rounded-3xl overflow-hidden shadow-card transition duration-500">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover" alt="Dubai" />
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-3">
+              <span><i class="fa-regular fa-clock mr-1"></i> 5 Days</span>
+              <span><i class="fa-solid fa-star text-yellow-400 mr-1"></i> 4.7</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-2">Dubai Extravaganza</h3>
+            <p class="text-slate-600 mb-4">Luxury shopping, desert safari, and skyline experiences.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-500">Starting From</p>
+                <p class="text-2xl font-bold text-primary">₹59,999</p>
+              </div>
+              <a href="package-details.html" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="package-card bg-white rounded-3xl overflow-hidden shadow-card transition duration-500">
+          <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover" alt="Maldives" />
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-3">
+              <span><i class="fa-regular fa-clock mr-1"></i> 4 Days</span>
+              <span><i class="fa-solid fa-star text-yellow-400 mr-1"></i> 5.0</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-2">Maldives Honeymoon</h3>
+            <p class="text-slate-600 mb-4">Overwater villas, candlelight dinners, and private transfers.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-500">Starting From</p>
+                <p class="text-2xl font-bold text-primary">₹89,999</p>
+              </div>
+              <a href="package-details.html" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="package-card bg-white rounded-3xl overflow-hidden shadow-card transition duration-500">
+          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover" alt="Paris" />
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-3">
+              <span><i class="fa-regular fa-clock mr-1"></i> 7 Days</span>
+              <span><i class="fa-solid fa-star text-yellow-400 mr-1"></i> 4.9</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-2">Paris & Europe Highlights</h3>
+            <p class="text-slate-600 mb-4">Romantic streets, iconic landmarks, and cultural tours.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-500">Starting From</p>
+                <p class="text-2xl font-bold text-primary">₹1,49,999</p>
+              </div>
+              <a href="package-details.html" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="package-card bg-white rounded-3xl overflow-hidden shadow-card transition duration-500">
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover" alt="Thailand" />
+          <div class="p-6">
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-3">
+              <span><i class="fa-regular fa-clock mr-1"></i> 5 Days</span>
+              <span><i class="fa-solid fa-star text-yellow-400 mr-1"></i> 4.6</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-dark mb-2">Thailand Getaway</h3>
+            <p class="text-slate-600 mb-4">Island hopping, nightlife, and cultural attractions.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-slate-500">Starting From</p>
+                <p class="text-2xl font-bold text-primary">₹39,999</p>
+              </div>
+              <a href="package-details.html" class="px-5 py-3 rounded-xl bg-primary text-white font-semibold">View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex justify-center mt-16 gap-3">
+        <a href="#" class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-semibold">1</a>
+        <a href="#" class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-semibold">2</a>
+        <a href="#" class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-semibold">3</a>
+        <a href="#" class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-gradient-to-r from-primary to-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-4xl font-bold mb-4">Need a Custom Tour Package?</h2>
+      <p class="text-lg text-white/90 mb-8">Tell us your dream destination and we'll create a personalized itinerary just for you.</p>
+      <a href="contact.html" class="inline-flex px-8 py-4 rounded-xl bg-accent text-white font-semibold shadow-lg">
+        Get Custom Quote
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-slate-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <h3 class="font-heading text-2xl font-bold text-white mb-4">Your Tourism Company</h3>
+          <p>Creating memorable journeys and premium travel experiences worldwide.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Tour Packages</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li>+91 70946 97173</li>
+            <li>info@yourtourismcompany.com</li>
+            <li>Your Office Address</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center text-sm">
+        © 2026 Your Tourism Company. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Navbar Scroll
+    const navbarBox = document.getElementById('navbarBox');
+    const logoText = document.getElementById('logoText');
+    const logoSubText = document.getElementById('logoSubText');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateNavbar() {
+      if (window.scrollY > 50) {
+        navbarBox.classList.remove('glass');
+        navbarBox.classList.add('bg-white', 'shadow-2xl');
+
+        logoText.classList.remove('text-white');
+        logoText.classList.add('text-slate-900');
+
+        logoSubText.classList.remove('text-slate-200');
+        logoSubText.classList.add('text-slate-500');
+
+        navLinks.forEach(link => {
+          if (!link.classList.contains('text-accent')) {
+            link.classList.remove('text-white');
+            link.classList.add('text-slate-800');
+          }
+        });
+
+        menuBtn.classList.remove('text-white');
+        menuBtn.classList.add('text-slate-800');
+      } else {
+        navbarBox.classList.add('glass');
+        navbarBox.classList.remove('bg-white', 'shadow-2xl');
+
+        logoText.classList.remove('text-slate-900');
+        logoText.classList.add('text-white');
+
+        logoSubText.classList.remove('text-slate-500');
+        logoSubText.classList.add('text-slate-200');
+
+        navLinks.forEach(link => {
+          if (!link.classList.contains('text-accent')) {
+            link.classList.remove('text-slate-800');
+            link.classList.add('text-white');
+          }
+        });
+
+        menuBtn.classList.remove('text-slate-800');
+        menuBtn.classList.add('text-white');
+      }
+    }
+
+    window.addEventListener('scroll', updateNavbar);
+    window.addEventListener('load', updateNavbar);
+  </script>
+</body>
+</html>

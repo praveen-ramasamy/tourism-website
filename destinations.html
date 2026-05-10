@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations | Your Tourism Company</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#14B8A6',
+            accent: '#F59E0B',
+            dark: '#0F172A'
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(15, 23, 42, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    .glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(to right, rgba(2,6,23,0.85), rgba(14,165,233,0.35)),
+        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
+    }
+
+    .destination-card img {
+      transition: transform .6s ease;
+    }
+
+    .destination-card:hover img {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-700">
+
+<!-- Header -->
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div id="navbarBox" class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div>
+          <div id="logoText" class="font-heading font-bold text-white">Your Tourism Company</div>
+          <div id="logoSubText" class="text-xs text-slate-200">Explore Beyond Limits</div>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 font-medium">
+        <a href="index.html" class="nav-link text-white hover:text-accent transition">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-accent transition">About</a>
+        <a href="packages.html" class="nav-link text-white hover:text-accent transition">Packages</a>
+        <a href="destinations.html" class="nav-link text-accent">Destinations</a>
+        <a href="gallery.html" class="nav-link text-white hover:text-accent transition">Gallery</a>
+        <a href="blog.html" class="nav-link text-white hover:text-accent transition">Blog</a>
+        <a href="contact.html" class="nav-link text-white hover:text-accent transition">Contact</a>
+      </div>
+
+      <a href="contact.html" class="hidden lg:inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+        Book Now
+      </a>
+
+      <button id="menuBtn" class="lg:hidden text-white text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
+      <div class="flex flex-col space-y-4 font-medium text-slate-800">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="packages.html">Packages</a>
+        <a href="destinations.html" class="text-primary">Destinations</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero-bg min-h-[60vh] flex items-center pt-32 pb-20 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
+      <i class="fa-solid fa-earth-americas"></i>
+      Explore Amazing Places
+    </span>
+    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">
+      Top Travel Destinations
+    </h1>
+    <p class="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed">
+      Discover breathtaking destinations across the globe, from tropical islands and alpine escapes to iconic cities and cultural wonders.
+    </p>
+  </div>
+</section>
+
+<!-- Filters -->
+<section class="py-10 bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-4">
+      <input type="text" placeholder="Search destination..." class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+      <select class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+        <option>All Regions</option>
+        <option>Asia</option>
+        <option>Europe</option>
+        <option>Middle East</option>
+        <option>Oceania</option>
+      </select>
+      <select class="px-5 py-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-primary/20">
+        <option>Travel Type</option>
+        <option>Adventure</option>
+        <option>Beach</option>
+        <option>Honeymoon</option>
+        <option>Cultural</option>
+      </select>
+      <button class="px-5 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-sky-600 transition">
+        Search Destinations
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Destinations Grid -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      <!-- Destination Card -->
+      <div class="destination-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Bali">
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-white text-xs font-semibold">12 Tours</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading text-2xl font-bold text-dark mb-2">Bali, Indonesia</h3>
+          <p class="text-slate-600 mb-5">Tropical beaches, luxury resorts, temples, and unforgettable sunsets.</p>
+          <a href="packages.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore Tours <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="destination-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Paris">
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary text-white text-xs font-semibold">9 Tours</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading text-2xl font-bold text-dark mb-2">Paris, France</h3>
+          <p class="text-slate-600 mb-5">Romantic streets, iconic landmarks, and world-class cuisine.</p>
+          <a href="packages.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore Tours <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="destination-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Dubai">
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-secondary text-white text-xs font-semibold">15 Tours</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading text-2xl font-bold text-dark mb-2">Dubai, UAE</h3>
+          <p class="text-slate-600 mb-5">Luxury shopping, desert adventures, and stunning skylines.</p>
+          <a href="packages.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore Tours <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="destination-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Maldives">
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent text-white text-xs font-semibold">7 Tours</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading text-2xl font-bold text-dark mb-2">Maldives</h3>
+          <p class="text-slate-600 mb-5">Overwater villas, crystal-clear lagoons, and honeymoon bliss.</p>
+          <a href="packages.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore Tours <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="destination-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Switzerland">
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary text-white text-xs font-semibold">10 Tours</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading text-2xl font-bold text-dark mb-2">Switzerland</h3>
+          <p class="text-slate-600 mb-5">Snow-capped mountains, scenic trains, and alpine villages.</p>
+          <a href="packages.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore Tours <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="destination-card bg-white rounded-3xl overflow-hidden shadow-soft transition duration-500">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Thailand">
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-secondary text-white text-xs font-semibold">14 Tours</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading text-2xl font-bold text-dark mb-2">Thailand</h3>
+          <p class="text-slate-600 mb-5">Island hopping, vibrant nightlife, and rich culture.</p>
+          <a href="packages.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore Tours <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="font-heading text-4xl font-bold mb-4">Can't Find Your Dream Destination?</h2>
+    <p class="text-lg text-white/90 mb-8">Our travel experts can create a custom itinerary tailored to your preferences.</p>
+    <a href="contact.html" class="inline-flex px-8 py-4 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+      Plan My Trip
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-slate-300 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div>
+        <h3 class="font-heading text-2xl font-bold text-white mb-4">Your Tourism Company</h3>
+        <p>Creating unforgettable journeys around the world.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="packages.html">Tour Packages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Contact</h4>
+        <p>+91 70946 97173</p>
+        <p>info@yourtourismcompany.com</p>
+        <p>Your Office Address</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Follow Us</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 text-center text-sm">
+      © 2026 Your Tourism Company. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+  // Navbar scroll effect
+  const navbarBox = document.getElementById('navbarBox');
+  const logoText = document.getElementById('logoText');
+  const logoSubText = document.getElementById('logoSubText');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      navbarBox.classList.remove('glass');
+      navbarBox.classList.add('bg-white', 'shadow-2xl');
+
+      logoText.classList.replace('text-white', 'text-slate-900');
+      logoSubText.classList.replace('text-slate-200', 'text-slate-500');
+
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-white');
+          link.classList.add('text-slate-800');
+        }
+      });
+
+      menuBtn.classList.remove('text-white');
+      menuBtn.classList.add('text-slate-800');
+    } else {
+      navbarBox.classList.add('glass');
+      navbarBox.classList.remove('bg-white', 'shadow-2xl');
+
+      logoText.classList.replace('text-slate-900', 'text-white');
+      logoSubText.classList.replace('text-slate-500', 'text-slate-200');
+
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-slate-800');
+          link.classList.add('text-white');
+        }
+      });
+
+      menuBtn.classList.remove('text-slate-800');
+      menuBtn.classList.add('text-white');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar);
+  window.addEventListener('load', updateNavbar);
+</script>
+
+</body>
+</html>

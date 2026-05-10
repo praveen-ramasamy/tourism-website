@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Your Tourism Company</title>
+    <meta name="description"
+        content="Learn about Your Tourism Company, our mission, our team, and why thousands of travelers trust us for unforgettable journeys." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#14B8A6',
+                        accent: '#F59E0B',
+                        dark: '#0F172A'
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        soft: '0 10px 40px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .hero-bg {
+            background:
+                linear-gradient(to right, rgba(2, 6, 23, 0.85), rgba(14, 165, 233, 0.45)),
+                url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            margin-top: 14px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #0EA5E9, #14B8A6);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div id="navbarBox"
+                class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <div>
+                        <div id="logoText" class="font-heading font-bold text-white">
+                            Your Tourism Company
+                        </div>
+                        <div id="logoSubText" class="text-xs text-slate-200">
+                            Explore Beyond Limits
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div id="desktopMenu" class="hidden lg:flex items-center gap-8 font-medium">
+                    <a href="index.html" class="nav-link text-white hover:text-accent transition">Home</a>
+                    <a href="about.html" class="nav-link text-accent">About</a>
+                    <a href="packages.html" class="nav-link text-white hover:text-accent transition">Packages</a>
+                    <a href="destinations.html"
+                        class="nav-link text-white hover:text-accent transition">Destinations</a>
+                    <a href="gallery.html" class="nav-link text-white hover:text-accent transition">Gallery</a>
+                    <a href="blog.html" class="nav-link text-white hover:text-accent transition">Blog</a>
+                    <a href="contact.html" class="nav-link text-white hover:text-accent transition">Contact</a>
+                </div>
+
+                <!-- CTA -->
+                <a href="contact.html"
+                    class="hidden lg:inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+                    Book Now
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="lg:hidden text-white text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
+                <div class="flex flex-col space-y-4 font-medium text-slate-800">
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="text-primary">About</a>
+                    <a href="packages.html">Packages</a>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[70vh] flex items-center pt-32 pb-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-4xl mx-auto text-center">
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    About Our Company
+                </span>
+
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Crafting Unforgettable Journeys Around the World
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-3xl mx-auto">
+                    Your Tourism Company is dedicated to creating premium travel experiences that inspire, delight, and
+                    leave lasting memories.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Company -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg"
+                        alt="Travel Team" class="rounded-3xl shadow-soft" />
+                </div>
+
+                <div>
+                    <span class="text-primary font-semibold">Who We Are</span>
+                    <h2 class="section-title font-heading text-4xl font-bold text-dark mt-2 mb-8">
+                        Your Trusted Travel Partner
+                    </h2>
+
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Your Tourism Company specializes in curated domestic and international travel experiences. From
+                        luxury vacations and family holidays to adventure tours and honeymoon escapes, we ensure every
+                        journey is seamless and memorable.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Our experienced travel consultants work closely with each client to create personalized
+                        itineraries that combine comfort, value, and unforgettable moments.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-primary"></i>
+                            <span>Personalized Itineraries</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-primary"></i>
+                            <span>Best Price Guarantee</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-primary"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-primary"></i>
+                            <span>Trusted Travel Experts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Values -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-semibold">Our Foundation</span>
+                <h2 class="section-title font-heading text-4xl font-bold text-dark mt-2">
+                    Mission, Vision & Values
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-soft">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-dark mb-4">Our Mission</h3>
+                    <p class="text-slate-600">To deliver extraordinary travel experiences with personalized service and
+                        exceptional value.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-soft">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-dark mb-4">Our Vision</h3>
+                    <p class="text-slate-600">To become the most trusted and preferred travel partner for explorers
+                        worldwide.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-soft">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-accent/10 text-accent flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-dark mb-4">Our Values</h3>
+                    <p class="text-slate-600">Integrity, customer satisfaction, innovation, and passion for travel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl text-primary mb-4"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-4xl font-bold font-heading">15,000+</h3>
+                    <p class="text-slate-300 mt-2">Happy Travelers</p>
+                </div>
+                <div>
+                    <div class="text-3xl text-secondary mb-4"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h3 class="text-4xl font-bold font-heading">120+</h3>
+                    <p class="text-slate-300 mt-2">Destinations</p>
+                </div>
+                <div>
+                    <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <h3 class="text-4xl font-bold font-heading">500+</h3>
+                    <p class="text-slate-300 mt-2">Tour Packages</p>
+                </div>
+                <div>
+                    <div class="text-3xl text-primary mb-4"><i class="fa-solid fa-award"></i></div>
+                    <h3 class="text-4xl font-bold font-heading">12+</h3>
+                    <p class="text-slate-300 mt-2">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-semibold">Our Team</span>
+                <h2 class="section-title font-heading text-4xl font-bold text-dark mt-2">
+                    Meet Our Travel Experts
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-soft" alt="Team Member">
+                    <h4 class="font-heading text-xl font-bold text-dark">Sophia Carter</h4>
+                    <p class="text-primary">Founder & CEO</p>
+                </div>
+
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-soft" alt="Team Member">
+                    <h4 class="font-heading text-xl font-bold text-dark">Daniel Lee</h4>
+                    <p class="text-primary">Travel Consultant</p>
+                </div>
+
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-soft" alt="Team Member">
+                    <h4 class="font-heading text-xl font-bold text-dark">Emma Wilson</h4>
+                    <p class="text-primary">Destination Expert</p>
+                </div>
+
+                <div class="text-center">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-soft" alt="Team Member">
+                    <h4 class="font-heading text-xl font-bold text-dark">Michael Brown</h4>
+                    <p class="text-primary">Customer Success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-4xl font-bold mb-4">Ready to Explore the World?</h2>
+            <p class="text-lg text-white/90 mb-8">
+                Let us plan your dream vacation with personalized itineraries and expert guidance.
+            </p>
+            <a href="contact.html"
+                class="inline-flex px-8 py-4 rounded-xl bg-accent text-white font-semibold shadow-lg">
+                Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-slate-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-4">Your Tourism Company</h3>
+                    <p>Creating memorable journeys and premium travel experiences worldwide.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li>+91 70946 97173</li>
+                        <li>info@yourtourismcompany.com</li>
+                        <li>Your Office Address</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-sm">
+                © 2026 Your Tourism Company. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+<script>
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // Navbar Scroll Effect
+  const navbarBox = document.getElementById('navbarBox');
+  const logoText = document.getElementById('logoText');
+  const logoSubText = document.getElementById('logoSubText');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      // White navbar
+      navbarBox.classList.remove('glass');
+      navbarBox.classList.add('bg-white', 'shadow-2xl');
+
+      // Logo text
+      logoText.classList.remove('text-white');
+      logoText.classList.add('text-slate-900');
+
+      logoSubText.classList.remove('text-slate-200');
+      logoSubText.classList.add('text-slate-500');
+
+      // Menu links
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-white');
+          link.classList.add('text-slate-800');
+        }
+      });
+
+      // Mobile menu button
+      menuBtn.classList.remove('text-white');
+      menuBtn.classList.add('text-slate-800');
+    } else {
+      // Transparent glass navbar
+      navbarBox.classList.add('glass');
+      navbarBox.classList.remove('bg-white', 'shadow-2xl');
+
+      // Logo text
+      logoText.classList.remove('text-slate-900');
+      logoText.classList.add('text-white');
+
+      logoSubText.classList.remove('text-slate-500');
+      logoSubText.classList.add('text-slate-200');
+
+      // Menu links
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-slate-800');
+          link.classList.add('text-white');
+        }
+      });
+
+      // Mobile menu button
+      menuBtn.classList.remove('text-slate-800');
+      menuBtn.classList.add('text-white');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar);
+  window.addEventListener('load', updateNavbar);
+</script>
+</body>
+
+</html>

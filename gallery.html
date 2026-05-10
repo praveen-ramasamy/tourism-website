@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Your Tourism Company</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#14B8A6',
+            accent: '#F59E0B',
+            dark: '#0F172A'
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    .glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(to right, rgba(2,6,23,0.85), rgba(14,165,233,0.35)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      transition: transform .6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,.85), transparent);
+      opacity: 0;
+      transition: .4s ease;
+      display: flex;
+      align-items: end;
+      padding: 1.5rem;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .masonry {
+      columns: 1;
+      column-gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .masonry { columns: 2; }
+    }
+
+    @media (min-width: 1024px) {
+      .masonry { columns: 3; }
+    }
+
+    .masonry .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-700">
+
+<!-- Header -->
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div id="navbarBox" class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div>
+          <div id="logoText" class="font-heading font-bold text-white">Your Tourism Company</div>
+          <div id="logoSubText" class="text-xs text-slate-200">Explore Beyond Limits</div>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 font-medium">
+        <a href="index.html" class="nav-link text-white hover:text-accent transition">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-accent transition">About</a>
+        <a href="packages.html" class="nav-link text-white hover:text-accent transition">Packages</a>
+        <a href="destinations.html" class="nav-link text-white hover:text-accent transition">Destinations</a>
+        <a href="gallery.html" class="nav-link text-accent">Gallery</a>
+        <a href="blog.html" class="nav-link text-white hover:text-accent transition">Blog</a>
+        <a href="contact.html" class="nav-link text-white hover:text-accent transition">Contact</a>
+      </div>
+
+      <a href="contact.html" class="hidden lg:inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+        Book Now
+      </a>
+
+      <button id="menuBtn" class="lg:hidden text-white text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
+      <div class="flex flex-col space-y-4 font-medium text-slate-800">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="packages.html">Packages</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="gallery.html" class="text-primary">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero-bg min-h-[60vh] flex items-center pt-32 pb-20 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
+      <i class="fa-solid fa-camera-retro"></i>
+      Travel Memories
+    </span>
+    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6">Our Travel Gallery</h1>
+    <p class="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed">
+      Explore stunning destinations, unforgettable moments, and inspiring journeys from around the world.
+    </p>
+  </div>
+</section>
+
+<!-- Filter Buttons -->
+<section class="py-10 bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center gap-3">
+    <button class="px-5 py-2.5 rounded-full bg-primary text-white font-medium">All</button>
+    <button class="px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-primary">Beaches</button>
+    <button class="px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-primary">Mountains</button>
+    <button class="px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-primary">Cities</button>
+    <button class="px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-primary">Adventure</button>
+    <button class="px-5 py-2.5 rounded-full bg-white border border-slate-200 hover:border-primary">Cultural</button>
+  </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="masonry">
+
+      <!-- Item -->
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Beach">
+        <div class="gallery-overlay">
+          <div>
+            <h3 class="text-white font-heading text-xl font-bold">Tropical Beaches</h3>
+            <p class="text-slate-200 text-sm">Maldives & Bali</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Mountains">
+        <div class="gallery-overlay">
+          <div>
+            <h3 class="text-white font-heading text-xl font-bold">Swiss Alps</h3>
+            <p class="text-slate-200 text-sm">Mountain Escapes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Paris">
+        <div class="gallery-overlay"><div><h3 class="text-white font-heading text-xl font-bold">Paris</h3><p class="text-slate-200 text-sm">Romantic Cities</p></div></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Dubai">
+        <div class="gallery-overlay"><div><h3 class="text-white font-heading text-xl font-bold">Dubai</h3><p class="text-slate-200 text-sm">Luxury Travel</p></div></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Temple">
+        <div class="gallery-overlay"><div><h3 class="text-white font-heading text-xl font-bold">Cultural Heritage</h3><p class="text-slate-200 text-sm">Ancient Temples</p></div></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Road Trip">
+        <div class="gallery-overlay"><div><h3 class="text-white font-heading text-xl font-bold">Adventure Roads</h3><p class="text-slate-200 text-sm">Epic Journeys</p></div></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Maldives">
+        <div class="gallery-overlay"><div><h3 class="text-white font-heading text-xl font-bold">Maldives</h3><p class="text-slate-200 text-sm">Honeymoon Paradise</p></div></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80" class="w-full rounded-3xl" alt="Thailand">
+        <div class="gallery-overlay"><div><h3 class="text-white font-heading text-xl font-bold">Thailand</h3><p class="text-slate-200 text-sm">Island Adventures</p></div></div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:bg-sky-600 transition">
+        Load More Photos
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="font-heading text-4xl font-bold mb-4">Ready to Create Your Own Travel Story?</h2>
+    <p class="text-lg text-white/90 mb-8">Book your dream vacation with Your Tourism Company today.</p>
+    <a href="contact.html" class="inline-flex px-8 py-4 rounded-xl bg-accent text-white font-semibold shadow-lg hover:scale-105 transition">
+      Start Planning
+    </a>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-slate-300 pt-20 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <h3 class="font-heading text-2xl font-bold text-white mb-4">Your Tourism Company</h3>
+          <p>Crafting unforgettable journeys with premium service and curated experiences.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Tour Packages</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li>+91 70946 97173</li>
+            <li>info@yourtourismcompany.com</li>
+            <li>Your Office Address</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Follow Us</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 text-center text-sm">
+        © 2026 Your Tourism Company. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4">
+  <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <img id="lightboxImg" src="" alt="Gallery Preview" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
+</div>
+
+<script>
+  // Mobile Menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+  // Navbar Scroll
+  const navbarBox = document.getElementById('navbarBox');
+  const logoText = document.getElementById('logoText');
+  const logoSubText = document.getElementById('logoSubText');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      navbarBox.classList.remove('glass');
+      navbarBox.classList.add('bg-white', 'shadow-2xl');
+      logoText.classList.replace('text-white', 'text-slate-900');
+      logoSubText.classList.replace('text-slate-200', 'text-slate-500');
+
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-white');
+          link.classList.add('text-slate-800');
+        }
+      });
+
+      menuBtn.classList.remove('text-white');
+      menuBtn.classList.add('text-slate-800');
+    } else {
+      navbarBox.classList.add('glass');
+      navbarBox.classList.remove('bg-white', 'shadow-2xl');
+      logoText.classList.replace('text-slate-900', 'text-white');
+      logoSubText.classList.replace('text-slate-500', 'text-slate-200');
+
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-slate-800');
+          link.classList.add('text-white');
+        }
+      });
+
+      menuBtn.classList.remove('text-slate-800');
+      menuBtn.classList.add('text-white');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar);
+  window.addEventListener('load', updateNavbar);
+
+  // Lightbox
+  function openLightbox(item) {
+    const img = item.querySelector('img');
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.getElementById('lightbox').classList.add('flex');
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+</script>
+
+</body>
+</html>

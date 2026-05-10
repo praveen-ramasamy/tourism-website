@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Details | Your Tourism Company</title>
+  <meta name="description" content="Read travel stories, destination guides, and expert tips from Your Tourism Company." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#14B8A6',
+            accent: '#F59E0B',
+            dark: '#0F172A'
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(15, 23, 42, 0.08)',
+            card: '0 30px 80px rgba(15, 23, 42, 0.10)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .hero-bg {
+      background:
+        linear-gradient(to right, rgba(2,6,23,0.85), rgba(14,165,233,0.35)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    .article-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.9;
+      color: #475569;
+    }
+    .article-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 2.5rem 0 1rem;
+    }
+    .article-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #475569;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div id="navbarBox" class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div>
+          <div id="logoText" class="font-heading font-bold text-white">Your Tourism Company</div>
+          <div id="logoSubText" class="text-xs text-slate-200">Explore Beyond Limits</div>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 font-medium">
+        <a href="index.html" class="nav-link text-white hover:text-accent">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-accent">About</a>
+        <a href="packages.html" class="nav-link text-white hover:text-accent">Packages</a>
+        <a href="destinations.html" class="nav-link text-white hover:text-accent">Destinations</a>
+        <a href="gallery.html" class="nav-link text-white hover:text-accent">Gallery</a>
+        <a href="blog.html" class="nav-link text-accent">Blog</a>
+        <a href="contact.html" class="nav-link text-white hover:text-accent">Contact</a>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden text-white text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden mt-3 rounded-2xl bg-white shadow-2xl p-5 lg:hidden">
+      <div class="flex flex-col space-y-4 font-medium text-slate-800">
+        <a href="index.html">Home</a>
+        <a href="blog.html" class="text-primary">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero-bg min-h-[70vh] flex items-end pt-32 pb-16 text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-6 flex flex-wrap items-center gap-4 text-sm text-white/90">
+      <span><i class="fa-regular fa-calendar mr-2"></i>May 10, 2026</span>
+      <span><i class="fa-regular fa-user mr-2"></i>Admin</span>
+      <span><i class="fa-regular fa-folder mr-2"></i>Travel Tips</span>
+    </div>
+    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+      Top 10 Tropical Beach Destinations for Your Dream Vacation
+    </h1>
+    <p class="text-lg sm:text-xl text-slate-200 max-w-3xl">
+      Discover paradise with our curated list of the world's most breathtaking beach escapes.
+    </p>
+  </div>
+</section>
+
+<!-- Content -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-3 gap-12">
+
+      <!-- Main Article -->
+      <article class="lg:col-span-2 bg-white rounded-3xl shadow-card overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80" alt="Beach Destination" class="w-full h-[420px] object-cover">
+
+        <div class="p-8 lg:p-12 article-content">
+          <p>
+            If you are dreaming of powder-soft sand, crystal-clear waters, and unforgettable sunsets, tropical beach destinations offer the ultimate escape.
+          </p>
+
+          <h2>Why Beach Holidays Are So Popular</h2>
+          <p>
+            Beach vacations combine relaxation, adventure, and natural beauty. Whether you're planning a honeymoon, family getaway, or solo retreat, coastal destinations provide something for everyone.
+          </p>
+
+          <h2>Our Top Picks</h2>
+          <ul>
+            <li>Maldives</li>
+            <li>Bali, Indonesia</li>
+            <li>Phuket, Thailand</li>
+            <li>Bora Bora</li>
+            <li>Seychelles</li>
+          </ul>
+
+          <p>
+            Each destination offers unique experiences—from overwater villas to coral reefs and vibrant local cultures.
+          </p>
+
+          <blockquote class="border-l-4 border-primary bg-sky-50 p-6 rounded-r-2xl my-8 italic text-slate-700">
+            "Travel is the only thing you buy that makes you richer."
+          </blockquote>
+
+          <h2>Best Time to Visit</h2>
+          <p>
+            The ideal season varies by region, but generally the dry season offers the best weather, calm seas, and plenty of sunshine.
+          </p>
+
+          <h2>Plan Your Trip</h2>
+          <p>
+            Your Tourism Company can help you create a personalized itinerary, secure the best resorts, and arrange unforgettable excursions.
+          </p>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        <!-- Search -->
+        <div class="bg-white rounded-3xl shadow-soft p-6">
+          <h3 class="font-heading text-xl font-bold text-dark mb-4">Search</h3>
+          <div class="relative">
+            <input type="text" placeholder="Search articles..." class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20">
+            <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="bg-white rounded-3xl shadow-soft p-6">
+          <h3 class="font-heading text-xl font-bold text-dark mb-4">Categories</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li><a href="#" class="hover:text-primary">Travel Tips</a></li>
+            <li><a href="#" class="hover:text-primary">Destination Guides</a></li>
+            <li><a href="#" class="hover:text-primary">Honeymoon Travel</a></li>
+            <li><a href="#" class="hover:text-primary">Adventure Tours</a></li>
+            <li><a href="#" class="hover:text-primary">Family Vacations</a></li>
+          </ul>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="bg-white rounded-3xl shadow-soft p-6">
+          <h3 class="font-heading text-xl font-bold text-dark mb-4">Recent Posts</h3>
+          <div class="space-y-4">
+            <a href="#" class="flex gap-4 group">
+              <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=200&q=80" class="w-20 h-20 rounded-xl object-cover">
+              <div>
+                <h4 class="font-semibold text-dark group-hover:text-primary">Switzerland Travel Guide</h4>
+                <p class="text-sm text-slate-500">May 05, 2026</p>
+              </div>
+            </a>
+            <a href="#" class="flex gap-4 group">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=200&q=80" class="w-20 h-20 rounded-xl object-cover">
+              <div>
+                <h4 class="font-semibold text-dark group-hover:text-primary">Best Things to Do in Dubai</h4>
+                <p class="text-sm text-slate-500">Apr 28, 2026</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-8">
+          <h3 class="font-heading text-2xl font-bold mb-3">Plan Your Dream Vacation</h3>
+          <p class="text-white/90 mb-6">Get expert guidance and exclusive offers for your next trip.</p>
+          <a href="contact.html" class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold">
+            Contact Us
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Related Posts -->
+<section class="pb-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading text-3xl font-bold text-dark mb-10">Related Articles</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-3xl shadow-soft overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=80" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="font-heading text-xl font-bold text-dark mb-3">Why Maldives is Perfect for Honeymoons</h3>
+          <a href="#" class="text-primary font-semibold">Read More →</a>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-soft overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="font-heading text-xl font-bold text-dark mb-3">Thailand Travel Tips for First-Timers</h3>
+          <a href="#" class="text-primary font-semibold">Read More →</a>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-soft overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="font-heading text-xl font-bold text-dark mb-3">Ultimate Road Trip Packing Checklist</h3>
+          <a href="#" class="text-primary font-semibold">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-slate-300 py-12 text-center">
+  <h3 class="font-heading text-2xl font-bold text-white mb-3">Your Tourism Company</h3>
+  <p class="mb-4">Creating unforgettable journeys around the world.</p>
+  <p class="text-sm">© 2026 Your Tourism Company. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+  const navbarBox = document.getElementById('navbarBox');
+  const logoText = document.getElementById('logoText');
+  const logoSubText = document.getElementById('logoSubText');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateNavbar() {
+    if (window.scrollY > 50) {
+      navbarBox.classList.remove('glass');
+      navbarBox.classList.add('bg-white', 'shadow-2xl');
+      logoText.classList.replace('text-white', 'text-slate-900');
+      logoSubText.classList.replace('text-slate-200', 'text-slate-500');
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-white');
+          link.classList.add('text-slate-800');
+        }
+      });
+      menuBtn.classList.remove('text-white');
+      menuBtn.classList.add('text-slate-800');
+    } else {
+      navbarBox.classList.add('glass');
+      navbarBox.classList.remove('bg-white', 'shadow-2xl');
+      logoText.classList.replace('text-slate-900', 'text-white');
+      logoSubText.classList.replace('text-slate-500', 'text-slate-200');
+      navLinks.forEach(link => {
+        if (!link.classList.contains('text-accent')) {
+          link.classList.remove('text-slate-800');
+          link.classList.add('text-white');
+        }
+      });
+      menuBtn.classList.remove('text-slate-800');
+      menuBtn.classList.add('text-white');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar);
+  window.addEventListener('load', updateNavbar);
+</script>
+
+</body>
+</html>
+
